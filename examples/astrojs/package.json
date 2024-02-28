@@ -1,0 +1,22 @@
+{
+  "name": "astrojs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "content-pipeline": "sh run_semantify.sh",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.4.5",
+    "dayjs": "^1.11.10",
+    "typescript": "^5.3.3"
+  }
+}

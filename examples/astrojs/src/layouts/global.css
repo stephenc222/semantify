@@ -1,0 +1,77 @@
+/* Connecting the CSS from a local, global css file. Allows overcoming FOUT! */
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("/fonts/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("/fonts/Merriweather-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.animate-like {
+  animation: radiatePulse 0.1s linear;
+}
+
+@keyframes radiatePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.dark .ql-toolbar.ql-snow {
+  border: 1px solid #7b8794 !important;
+  color: #9aa5b1 !important;
+}
+
+.dark .ql-container.ql-snow {
+  border: 1px solid #7b8794 !important;
+}
+
+.dark .ql-snow .ql-picker.ql-header {
+  color: #9aa5b1 !important;
+}
+
+.dark .ql-snow .ql-picker-label .ql-stroke {
+  stroke: #9aa5b1;
+}
+
+.dark .ql-snow .ql-code-block .ql-stroke {
+  stroke: #9aa5b1;
+}
+.dark .ql-snow .ql-italic .ql-stroke {
+  stroke: #9aa5b1;
+}
+.dark .ql-snow .ql-bold .ql-stroke {
+  stroke: #9aa5b1;
+}
+
+.dark .ql-snow .ql-underline .ql-stroke {
+  stroke: #9aa5b1;
+}
+
+.dark .ql-snow .ql-underline .ql-fill {
+  fill: #9aa5b1;
+}

@@ -1,0 +1,115 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: "class",
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Open Sans", "Arial", "sans-serif"],
+        serif: [
+          "Merriweather",
+          "Georgia",
+          "serif",
+          ...defaultTheme.fontFamily.serif,
+        ],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "#3182ce",
+              "&:hover": {
+                color: "#2c5282",
+              },
+            },
+            pre: {
+              "background-color": "#161A1F !important",
+            },
+          },
+        },
+      },
+    },
+    colors: {
+      "dark-input-bg": "#414C58",
+      "dark-submit-bg": "#2C6CE8",
+      "light-bg-gradient-start": "#FFFFFF",
+      "light-bg-gradient-end": "#F1F2F4",
+      indigo: {
+        100: "#E0E8F9",
+        200: "#BED0F7",
+        300: "#98AEEB",
+        400: "#7B93DB",
+        500: "#647ACB",
+        600: "#4C63B6",
+        700: "#4055A8",
+        800: "#35469C",
+        900: "#2D3A8C",
+        1000: "#19216C",
+      },
+      gray: {
+        100: "#F5F7FA",
+        200: "#E4E7EB",
+        300: "#CBD2D9",
+        400: "#9AA5B1",
+        500: "#7B8794",
+        600: "#616E7C",
+        700: "#52606D",
+        800: "#3E4C59",
+        850: "#212932",
+        900: "#272e37",
+        1000: "#161A1F",
+      },
+      "light-blue": {
+        100: "#E3F8FF",
+        200: "#B3ECFF",
+        300: "#81DEFD",
+        400: "#5ED0FA",
+        500: "#40C3F7",
+        600: "#2BB0ED",
+        700: "#1992D4",
+        800: "#127FBF",
+        900: "#0B69A3",
+        1000: "#035388",
+      },
+      red: {
+        100: "#FFE3E3",
+        200: "#FFBDBD",
+        300: "#FF9B9B",
+        400: "#F86A6A",
+        500: "#EF4E4E",
+        600: "#E12D39",
+        700: "#CF1124",
+        800: "#AB091E",
+        900: "#8A041A",
+        1000: "#610316",
+      },
+      yellow: {
+        100: "#FFFBEA",
+        200: "#FFF3C4",
+        300: "#FCE588",
+        400: "#FADB5F",
+        500: "#F7C948",
+        600: "#F0B429",
+        700: "#DE911D",
+        800: "#CB6E17",
+        900: "#B44D12",
+        1000: "#8D2B0B",
+      },
+      teal: {
+        100: "#EFFCF6",
+        200: "#C6F7E2",
+        300: "#8EEDC7",
+        400: "#65D6AD",
+        500: "#3EBD93",
+        600: "#27AB83",
+        700: "#199473",
+        800: "#147D64",
+        900: "#0C6B58",
+        1000: "#014D40",
+      },
+    },
+  },
+  plugins: [require("@tailwindcss/typography")],
+}

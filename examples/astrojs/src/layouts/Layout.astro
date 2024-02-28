@@ -1,0 +1,59 @@
+---
+import "./global.css"
+
+export interface Props {
+  title: string
+  active?: string
+  summary?: string
+  author?: string
+  imageUri?: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="canonical" href={Astro.request.url} />
+    <meta
+      name="robots"
+      content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <title>{title}</title>
+    <script is:inline>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+    </script>
+  </head>
+  <body
+    class="flex flex-col text-gray-1000 bg-gradient-to-b from-light-bg-gradient-start to-light-bg-gradient-end dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-1000 dark:text-gray-200 lg:pt-0 px-10"
+  >
+    <main class="flex flex-col min-h-screen w-full h-full mt-0 lg:mt-0">
+      <slot />
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"
+      integrity="sha512-KqUc2WMPF/gxte9xVjVE4TIt1LMUTidO3BrcItFg0Ro24I7pGNzgcXdnWdezNY+8T0/JEmdC79MuwYn+8UdOqw=="
+      crossorigin="anonymous"
+      async
+      referrerpolicy="no-referrer"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+    ></script>
+  </body>
+</html>

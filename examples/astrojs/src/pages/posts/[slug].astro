@@ -1,0 +1,98 @@
+---
+import { getEntry } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+import dayjs from "dayjs"
+import ReadingTime from "../../components/icons/ReadingTime.astro"
+
+// TODO: when adding both the "recommended posts" section, and the summary "Q & A" section, add a small,
+// discrete thumbs up icon and thumbs down icon in the bottom right corner of each section.
+// the "recommended posts" section is at the bottom of the page, and the summary "Q & A" section is at the top page.
+
+const entry = await getEntry("blog", Astro.params.slug as string)
+if (!entry) {
+  return Astro.redirect("/not-found")
+}
+const { Content } = await entry.render()
+---
+
+<Layout
+  title={entry.data.title}
+  summary={entry.data.summary}
+  author={entry.data.author}
+  imageUri={entry.data.imageUri}
+>
+  <article
+    class="flex flex-col self-center mx-4 lg:mx-0 lg:px-0 max-w-[300px] sm:max-w-[450px]"
+  >
+    <h1
+      class="dark:text-[white] text-2xl lg:text-4xl pb-4 lg:pb-8 pt-8 lg:pt-16 font-black"
+    >
+      {entry.data.title}
+    </h1>
+    <div class="text-sm text-gray-500 dark:text-gray-400 w-full pb-12">
+      <span>{entry.data.author}</span>
+      &#8226;
+      <span>{dayjs(entry.data.published).format("MMM D, YYYY")}</span>
+      {
+        entry.data.readingTime && (
+          <div class="flex pt-1 pb-1">
+            <span class="pr-2 -ml-0.5">
+              <ReadingTime />
+            </span>
+            {entry.data.readingTime}
+            {entry.data.readingTime === 1 ? "min" : "mins"}
+          </div>
+        )
+      }
+      {
+        entry.data?.qaSection && (
+          <section class="flex flex-col pb-8">
+            <h2 class="text-xl font-semibold mt-8">What you will learn</h2>
+            <div>
+              <ul class="list-inside font-serif text-base border-l-2 dark:border-gray-700 border-gray-300 pl-4">
+                {entry.data.qaSection.map(({ question, answer }) => (
+                  <>
+                    <li class="font-semibold mb-4 mt-8 dark:text-gray-300 text-gray-800">
+                      {question}
+                    </li>
+                    <li class="italic dark:text-gray-400 text-gray-500">
+                      {answer}
+                    </li>
+                  </>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )
+      }
+      <div
+        class="font-serif prose dark:prose-invert flex flex-col [&>h2]:font-sans [&>h3]:font-sans [&>h4]:font-sans [&>h5]:font-sans [&>h6]:font-sans border-b dark:border-gray-700 border-gray-300 mb-8 pb-8"
+      >
+        <Content />
+      </div>
+      {
+        entry.data?.recommendations && (
+          <div class="flex flex-col pb-8">
+            <h2 class="text-xl dark:text-[white] mb-2 mt-2">
+              Recommended Posts
+            </h2>
+            <div>
+              <ul class="list-inside text-base">
+                {entry.data.recommendations.map(({ slug, title }) => (
+                  <li class="mb-4 mt-4">
+                    <a
+                      href={`/posts/${slug}`}
+                      class="dark:text-indigo-400 text-indigo-700 dark:hover:text-indigo-600 hover:text-indigo-1000 transition duration-150 ease-in-out"
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </article>
+</Layout>
