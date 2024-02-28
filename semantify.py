@@ -12,7 +12,7 @@ from interfaces import IMetadataManager, IRecommender
 
 
 class Semantify:
-    def __init__(self, metadata_manager: IMetadataManager = None, api_key=None, blog_directory=None, recommender: IRecommender = None, qa_generator=None):
+    def __init__(self, metadata_manager: IMetadataManager = None, blog_directory=None, recommender: IRecommender = None, qa_generator=None):
         self.metadata_manager = metadata_manager
         self.blog_directory = blog_directory
         self.qa_generator = qa_generator
