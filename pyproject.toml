@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "semantify"
+version = "0.0.1"
+description = "Semantify enriches content with AI-generated summaries, Q&A, and semantically similar recommendations for CMS deployments."
+authors = ["Stephen Collins <stephenc211@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+urllib3 = "1.26.7"
+transformers = "4.37.2"
+torch = "2.2.0"
+pyyaml = "6.0.1"
+openai = "1.6.1"
+python-dotenv = "*"
+sqlean-py = "^3.45.1"
+requests = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+semantify = "semantify:main"
+test = "run_tests:main"

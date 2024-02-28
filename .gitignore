@@ -1,0 +1,17 @@
+# build output
+dist/
+__pycache__
+
+bin/
+lib/
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+*.pem
+*.db
+*.dylib
