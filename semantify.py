@@ -36,12 +36,6 @@ class Semantify:
                             help='Remove and replace Q&A for all blog posts')
         return parser.parse_args()
 
-    def initialize_qa_generator(self, api_key):
-        if not api_key:
-            api_key = os.environ.get("OPENAI_API_KEY")
-        llm_service = OpenAIService(api_key=api_key)
-        return QAGenerator(llm_service=llm_service)
-
     def process_blog_post(self, mdx_path):
         if not os.path.exists(mdx_path):
             print(f"Path {mdx_path} does not exist.")
