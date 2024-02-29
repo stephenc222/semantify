@@ -1,7 +1,9 @@
 [tool.poetry]
 name = "semantify"
-version = "0.0.1"
+version = "0.0.2"
 description = "Semantify enriches content with AI-generated summaries, Q&A, and semantically similar recommendations for CMS deployments."
+repository = "https://github.com/stephenc222/semantify"
+homepage = "https://github.com/stephenc222/semantify"
 authors = ["Stephen Collins <stephenc211@gmail.com>"]
 license = "Apache 2.0"
 readme = "README.md"
