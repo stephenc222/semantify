@@ -1,16 +1,30 @@
 import json
-from transformers import AutoTokenizer, AutoModel
 import torch
 import torch.nn.functional as F
 from torch import Tensor
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
+
 EMBEDDING_MODEL = 'thenlper/gte-base'
 
+
+def loadd_tokenizer_and_model():
+    # Log message before importing the module
+    print(f'Loading pretrained \"{EMBEDDING_MODEL}\" tokenizer and model...')
+
+    # Import the module
+    from transformers import AutoTokenizer, AutoModel
+
+    tokenizer = AutoTokenizer.from_pretrained(EMBEDDING_MODEL)
+    model = AutoModel.from_pretrained(EMBEDDING_MODEL)
+    print(f" \"{EMBEDDING_MODEL}\" tokenizer and model loaded.")
+
+    return tokenizer, model
+
+
 # Initialize tokenizer and model for the embedding model
-tokenizer = AutoTokenizer.from_pretrained(EMBEDDING_MODEL)
-model = AutoModel.from_pretrained(EMBEDDING_MODEL)
+tokenizer, model = loadd_tokenizer_and_model()
 
 
 def average_pool(last_hidden_states: Tensor, attention_mask: Tensor) -> Tensor:
