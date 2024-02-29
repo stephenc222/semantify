@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-
-import argparse
 import os
-from services.openai import OpenAIService
-from services.sqlite import SQLiteDBService
-from utils.frontmatter_utils import FrontmatterUtils
-from utils.calculate_reading_time import calculate_reading_time
-from summarizer.qa_generator import QAGenerator
-from recommender.blog_recommender import BlogRecommender
-from interfaces import IMetadataManager, IRecommender
+import argparse
+from semantify.recommender.blog_recommender import BlogRecommender
+from semantify.summarizer.qa_generator import QAGenerator
+from semantify.utils.calculate_reading_time import calculate_reading_time
+from semantify.utils.frontmatter_utils import FrontmatterUtils
+from semantify.services.sqlite import SQLiteDBService
+from semantify.services.openai import OpenAIService
+from semantify.interfaces import IMetadataManager, IRecommender
 
 
 class Semantify:

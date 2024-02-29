@@ -2,8 +2,8 @@ import os
 import yaml
 import re
 from typing import Tuple, Optional, Dict, List
-from models import Frontmatter
-from interfaces import IMetadataManager
+from semantify.models import Frontmatter
+from semantify.interfaces import IMetadataManager
 
 
 class FrontmatterUtils(IMetadataManager):

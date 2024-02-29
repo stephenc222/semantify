@@ -2,7 +2,7 @@ import json
 import os
 from openai import OpenAI
 from typing import List, Dict
-from interfaces import ILLMService
+from semantify.interfaces import ILLMService
 
 
 class OpenAIService(ILLMService):

@@ -1,4 +1,4 @@
-from interfaces import ILLMService
+from semantify.interfaces import ILLMService
 from typing import Dict
 
 

@@ -5,6 +5,8 @@ description = "Semantify enriches content with AI-generated summaries, Q&A, and 
 authors = ["Stephen Collins <stephenc211@gmail.com>"]
 license = "Apache 2.0"
 readme = "README.md"
+packages = [{ include = "semantify" }]
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -26,5 +28,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-semantify = "semantify:main"
-test = "run_tests:main"
+semantify = "semantify.semantify:main"
+test = "semantify.run_tests:main"

@@ -1,10 +1,10 @@
 from typing import List, Dict
 from pathlib import Path
 import hashlib
-from interfaces import IDBService
 import sqlean as sqlite3
-from utils.embedding_util import generate_embeddings
-from utils.download_sqlite_extensions import download_sqlite_extensions
+from semantify.interfaces import IDBService
+from semantify.utils.embedding_util import generate_embeddings
+from semantify.utils.download_sqlite_extensions import download_sqlite_extensions
 
 db_base_dir = Path.home() / ".semantify"
 

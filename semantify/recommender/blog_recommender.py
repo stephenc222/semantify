@@ -1,5 +1,5 @@
 import os
-from interfaces import IMetadataManager, IDBService, IRecommender
+from semantify.interfaces import IMetadataManager, IDBService, IRecommender
 
 
 class BlogRecommender(IRecommender):

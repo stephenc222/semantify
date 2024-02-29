@@ -6,7 +6,7 @@ Semantify is a powerful CLI tool designed to enhance long-form content by levera
 
 - **AI-Generated Summaries**: Automatically generates concise summaries for your blog posts, making it easier for readers to grasp the essence of your content quickly.
 - **Q&A Sections**: Creates engaging Q&A sections from your content, adding interactive and informative elements that enhance reader engagement.
-- **Semantic Recommendations**: Analyzes your content to recommend other relevant blog posts, helping to increase page views and keep readers engaged with your site longer.
+- **Semantic Recommendations**: Analyzes your content to recommend your other relevant blog posts, helping to increase page views and keep readers engaged with your site longer.
 - **Customizable Enhancements**: Offers options to selectively update reading time estimates, recommendations, and Q&A sections for all blog posts.
 
 ## Installation
@@ -56,6 +56,23 @@ semantify --blog-directory "/path/to/your/blog/directory"
 ## Configuration
 
 Semantify works out of the box with minimal configuration. However, you can customize various aspects of its behavior through command-line options or environment variables.
+
+## Running the Examples
+
+To run the examples, you need to have [poetry](https://python-poetry.org/) installed. Then, from the root of this repository run:
+
+```bash
+poetry install
+poetry build
+```
+
+With the project built, you can install with pip:
+
+```bash
+pip install dist/semantify-0.0.1-py3-none-any.whl
+```
+
+Now, you can run the [Astro.js](https://astro.build/) example using the provided `run_semantify.sh` script
 
 ## Contributing
 
