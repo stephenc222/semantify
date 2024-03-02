@@ -21,9 +21,11 @@ class Semantify:
     def parse_arguments():
         parser = argparse.ArgumentParser(description='Process blog posts.')
         parser.add_argument('--openai-api-key',
-                            help='Pass your OpenAI API Key. Default is to use the OPENAI_API_KEY environment variable.')
+                            help='Pass your OpenAI API Key. Default is to use the OPENAI_API_KEY environment variable.',
+                            default=os.environ.get('OPENAI_API_KEY'))
         parser.add_argument('--blog-directory',
-                            help='Path to the blog directory. Default is to use the BLOG_DIRECTORY environment variable.')
+                            help='Path to the blog directory. Default is to use the BLOG_DIRECTORY environment variable.',
+                            default=os.environ.get('BLOG_DIRECTORY'))
         parser.add_argument('--replace-reading-time',
                             action='store_true',
                             help='Remove and replace reading time estimate for all blog posts')
