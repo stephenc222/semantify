@@ -2,6 +2,8 @@
 
 Semantify is a powerful CLI tool designed to enhance long-form content by leveraging Generative AI. It enriches MDX blog posts with AI-generated summaries, Q&A sections, and semantically similar recommendations, providing a richer and more engaging reader experience. Ideal for content creators, marketers, and anyone looking to elevate their written content, Semantify automates the process of adding valuable, semantic information and establishing deeper connections between blog posts.
 
+For a deeper dive into how Semantify can transform your blog posts with LLMs, check out my blog post [here](https://stephencollins.tech/posts/how-to-enhance-content-with-semantify-ai).
+
 ## Features
 
 - **AI-Generated Summaries**: Automatically generates concise summaries for your blog posts, making it easier for readers to grasp the essence of your content quickly.
